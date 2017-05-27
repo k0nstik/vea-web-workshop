@@ -5,19 +5,24 @@ module Users
     @signup_user
   end
 
-  def Users.login_user
-    @signup_user ||= User.new(email: 'b2413127@mvrht.net', password: 'qwerty123')
-    @signup_user
-  end
-
-  def Users.signup_user_no_password
-    @signup_user ||= User.new(email: 'test@test.com', password: '')
-    @signup_user
-  end
+  # def Users.signup_user_no_password
+  #   @signup_user ||= User.new(email: 'test@test.com', password: '')
+  #   @signup_user
+  # end
 
   def Users.signup_user_no_again_password
     @signup_user_no_again_password ||= User.new(email: 'test@test.com', password: 'passworddemo', password_again: '')
     @signup_user_no_again_password
+  end
+
+  def Users.login_user
+    @login_user ||= User.new(email: 'b2413127@mvrht.net', password: 'qwerty123')
+    @login_user
+  end
+
+  def Users.login_user_no_password
+    @login_user_no_password ||= User.new(email: 'b2413127@mvrht.net', password: '')
+    @login_user_no_password
   end
 end
 

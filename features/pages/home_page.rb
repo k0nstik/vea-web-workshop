@@ -26,29 +26,8 @@ class HomePage < BasePage
     @try_now_button.click
   end
 
-  def open_login
-    @login_button.click
-  end
-
   def signup_enter_email(email)
     @signup_email.send_keys email
-  end
-  
-  def login_enter_email(email)
-    @login_email.send_keys email
-  end
-
-  def login_enter_pass(password)
-    @login_password.send_keys password
-  end
-
-  def login_submit_button
-    @login_submit_button.click
-  end
-
-  def if_logged_in_check
-    @test_data_tab.visible?
-    @project_tab.visible?
   end
 
   def signup_enter_pass1(password1)
@@ -70,6 +49,26 @@ class HomePage < BasePage
 
   def signup_close_signup()
     @signup_close_button.click
+  end
+
+  def open_login
+    @login_button.click
+  end
+
+  def login_enter_email(email)
+    @login_email.send_keys email
+  end
+
+  def login_enter_pass(password)
+    @login_password.send_keys password
+  end
+
+  def login_submit_button
+    @login_submit_button.click
+  end
+
+  def login_submit_button_visible?
+    @login_submit_button.visible?
   end
 
   def load

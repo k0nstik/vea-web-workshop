@@ -24,8 +24,6 @@ When(/^I submit signup details$/) do
   # find(:xpath, '//div[@id = "signup"]/descendant::input[@name = "project_name"]').send_keys 'MyProject'
  
   # find(:xpath, '//div[@id = "signup"]/descendant::img[@class = "closecross"]').click
-
-  sleep(3)
 end
 
 When(/^I submit signup details without again password$/) do
