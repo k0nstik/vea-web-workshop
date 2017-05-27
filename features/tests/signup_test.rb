@@ -3,8 +3,29 @@ class SignupTest
       @pages = pages
   end
 
-  def load_home_page
+  def load_signup_page
     @pages.page_home.load
-    home_page_visible?
+    @pages.page_home.visible?
+    @pages.page_home.open_signup
+  end
+
+  def enter_signup_details(user)
+    @pages.page_home.signup_enter_email user.email
+    @pages.page_home.signup_enter_pass1 user.password
+    @pages.page_home.signup_enter_pass2 user.password_again
+    @pages.page_home.signup_enter_project_name user.project_name
+    sleep(2)
+  end
+
+  def submit_signup_details
+    user = Users.signup_user
+    enter_signup_details(user)
+    @pages.page_home.signup_close_signup
+  end
+
+  def submit_signup_details_no_again_password
+    user = Users.signup_user_no_again_password
+    enter_signup_details(user)
+    @pages.page_home.signup_close_signup
   end
 end
