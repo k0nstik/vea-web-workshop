@@ -18,10 +18,10 @@ Feature: Demo Feature
         When I submit login details without password
         Then Im not loged in
 
-    # Scenario: Login User without email
-    #     Given I am on Appimation login page
-    #     When I submit login details without email
-    #     Then Im not loged in
+    Scenario: Login User without email
+        Given I am on Appimation login page
+        When I submit login details without email
+        Then Im not loged in
 
     # Scenario: Signup User without passwords
     #     Given I am on Appimation signup page

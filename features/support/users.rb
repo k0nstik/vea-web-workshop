@@ -24,6 +24,11 @@ module Users
     @login_user_no_password ||= User.new(email: 'b2413127@mvrht.net', password: '')
     @login_user_no_password
   end
+
+  def Users.login_user_no_email
+    @login_user_no_email ||= User.new(email: '', password: 'qwerty123')
+    @login_user_no_email
+  end
 end
 
 class User
