@@ -14,7 +14,6 @@ class SignupTest
     @pages.page_home.signup_enter_pass1 user.password
     @pages.page_home.signup_enter_pass2 user.password_again
     @pages.page_home.signup_enter_project_name user.project_name
-    sleep(2)
   end
 
   def submit_signup_details

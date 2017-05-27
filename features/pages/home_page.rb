@@ -14,8 +14,6 @@ class HomePage < BasePage
     @login_email = Element.new(:xpath, '//div[@id = "login"]/descendant::input[@name = "login"]')
     @login_password = Element.new(:xpath, '//div[@id = "login"]/descendant::input[@name = "password"]')
     @login_submit_button = Element.new(:xpath, '//div[@id = "login"]/descendant::button[@class = "button button-block innerButton"]')
-    @test_data_tab = Element.new(:xpath, '//div[@id = "testDataTitle"]')
-    @project_tab = Element.new(:xpath, '//div[@id = "projectTitle"]')
   end
 
   def visible?
@@ -55,7 +53,6 @@ class HomePage < BasePage
   def signup_click_get_started_button
     @signup_get_started_button.click
   end
-
 
   def signup_close_signup()
     @signup_close_button.click
