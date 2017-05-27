@@ -8,6 +8,13 @@ class HomePage < BasePage
     @signup_password2 = Element.new(:xpath, '//div[@id = "signup"]/descendant::input[@name = "password2"]')
     @signup_project_name = Element.new(:xpath, '//div[@id = "signup"]/descendant::input[@name = "project_name"]')
     @signup_close_button = Element.new(:xpath, '//div[@id = "signup"]/descendant::img[@class = "closecross"]')
+
+    @login_button = Element.new(:xpath, '//button[@id = "login-b"]')
+    @login_email = Element.new(:xpath, '//div[@id = "login"]/descendant::input[@name = "login"]')
+    @login_password = Element.new(:xpath, '//div[@id = "login"]/descendant::input[@name = "password"]')
+    @login_submit_button = Element.new(:xpath, '//div[@id = "login"]/descendant::button[@class = "button button-block innerButton"]')
+    @test_data_tab = Element.new(:xpath, '//div[@id = "testDataTitle"]')
+    @project_tab = Element.new(:xpath, '//div[@id = "projectTitle"]')
   end
 
   def visible?
@@ -19,19 +26,40 @@ class HomePage < BasePage
     @try_now_button.click
   end
 
+  def open_login
+    @login_button.click
+  end
+
   def signup_enter_email(email)
     @signup_email.send_keys email
   end
   
-    def signup_enter_pass1(password1)
+  def login_enter_email(email)
+    @login_email.send_keys email
+  end
+
+  def login_enter_pass(password)
+    @login_password.send_keys password
+  end
+
+  def login_submit_button
+    @login_submit_button.click
+  end
+
+  def if_logged_in_check
+    @test_data_tab.visible?
+    @project_tab.visible?
+  end
+
+  def signup_enter_pass1(password1)
     @signup_password1.send_keys password1
   end
   
-    def signup_enter_pass2(password2)
+  def signup_enter_pass2(password2)
     @signup_password2.send_keys password2
   end
 
-     def signup_enter_passwords(password)
+  def signup_enter_passwords(password)
       signup_enter_pass1 password
       signup_enter_pass2 password
   end
@@ -43,11 +71,6 @@ class HomePage < BasePage
   def signup_close_signup()
     @signup_close_button.click
   end
-  
-
-  def login_enter_email(email)
-
-    end
 
   def load
     visit('/')
