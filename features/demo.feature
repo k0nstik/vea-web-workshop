@@ -23,12 +23,12 @@ Feature: Demo Feature
         When I submit login details without email
         Then Im not loged in
 
-    # Scenario: Signup User without passwords
-    #     Given I am on Appimation signup page
-    #     When I submit signup details without passwords
-    #     Then Im not signed up
+    Scenario: Signup User without passwords
+        Given I am on Appimation sign up page
+        When I submit signup details without passwords
+        Then Im not signed up
 
-    # Scenario: Signup User without email
-    #     Given I am on Appimation signup page
-    #     When I submit signup details without email
-    #     Then Im not signed up
+    Scenario: Signup User without email
+        Given I am on Appimation sign up page
+        When I submit signup details without email
+        Then Im not signed up

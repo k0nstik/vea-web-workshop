@@ -28,4 +28,20 @@ class SignupTest
     enter_signup_details(user)
     @pages.page_home.signup_close_signup
   end
+
+  def submit_signup_details_no_passwords
+    user = Users.signup_user_no_passwords
+    enter_signup_details(user)
+    @pages.page_home.signup_click_get_started_button
+  end
+
+  def submit_signup_details_no_email
+    user = Users.signup_user_no_email
+    enter_signup_details(user)
+    @pages.page_home.signup_click_get_started_button
+  end
+
+  def check_if_still_on_signup_page
+    @pages.page_home.signup_get_started_button_visible?
+  end
 end

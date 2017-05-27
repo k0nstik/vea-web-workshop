@@ -29,3 +29,15 @@ end
 When(/^I submit signup details without again password$/) do
   @tests.signup_tests.submit_signup_details_no_again_password
 end
+
+When(/^I submit signup details without passwords$/) do
+  @tests.signup_tests.submit_signup_details_no_passwords
+end
+
+When(/^I submit signup details without email$/) do
+  @tests.signup_tests.submit_signup_details_no_email
+end
+
+Then(/^Im not signed up$/) do
+  @tests.signup_tests.check_if_still_on_signup_page
+end

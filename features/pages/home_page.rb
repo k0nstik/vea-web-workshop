@@ -8,6 +8,7 @@ class HomePage < BasePage
     @signup_password2 = Element.new(:xpath, '//div[@id = "signup"]/descendant::input[@name = "password2"]')
     @signup_project_name = Element.new(:xpath, '//div[@id = "signup"]/descendant::input[@name = "project_name"]')
     @signup_close_button = Element.new(:xpath, '//div[@id = "signup"]/descendant::img[@class = "closecross"]')
+    @signup_get_started_button = Element.new(:xpath, '//div[@id = "signup"]/descendant::button[@type = "submit"]')
 
     @login_button = Element.new(:xpath, '//button[@id = "login-b"]')
     @login_email = Element.new(:xpath, '//div[@id = "login"]/descendant::input[@name = "login"]')
@@ -20,6 +21,10 @@ class HomePage < BasePage
   def visible?
     @video_frame.visible?
     @try_now_button.visible?
+  end
+
+  def signup_get_started_button_visible?
+    @signup_get_started_button.visible?
   end
 
   def open_signup
@@ -46,6 +51,11 @@ class HomePage < BasePage
   def signup_enter_project_name(name)
     @signup_project_name.send_keys name
   end
+
+  def signup_click_get_started_button
+    @signup_get_started_button.click
+  end
+
 
   def signup_close_signup()
     @signup_close_button.click
